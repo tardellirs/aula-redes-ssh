@@ -64,7 +64,19 @@ Cada execução:
 - instala Docker e pip;
 - libera a porta 80.
 
-Ao final, o script mostra o **IP** e a **senha** de cada grupo. Anote.
+Ao final, o script mostra o **IP** e a **senha** de cada grupo. A senha de cada grupo
+também fica salva em `keys/senhas.csv` (fora do GitHub).
+
+A qualquer momento, veja **todos os servidores de uma vez** (grupo, IP, tipo, status,
+se o site está no ar e a senha):
+
+```bash
+./listar-aulas.sh
+```
+
+> **Os nomes dos grupos são definidos por você** ao provisionar (ex: `grupo1`,
+> `grupo2`, ...). Os times escolhem o nome real deles, mas no servidor padronizamos
+> como `grupoN` para a senha ficar simples. O `listar-aulas.sh` mostra o que existe.
 
 ### 2. Distribuir para cada grupo
 
@@ -155,6 +167,7 @@ aula-redes-ssh/              # repositório da aula (github.com/tardellirs/aula-
 │   ├── Dockerfile           # receita do contêiner (Parte 3)
 │   └── requirements.txt
 ├── provisionar-aula.sh      # cria 1 servidor por grupo (CX23, porta 53, senha, Docker)
+├── listar-aulas.sh          # lista grupos, IPs, status, site no ar e senhas
 ├── apagar-aula.sh           # apaga o servidor de um grupo
 ├── PARTE-1-ssh.md           # handout do aluno
 ├── PARTE-2-flask.md         # handout do aluno

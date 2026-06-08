@@ -196,6 +196,14 @@ systemctl restart ssh
 echo "  -> Login por senha habilitado para root"
 SETUP_PWD
 
+# --- 4c. registra a senha localmente (keys/ e gitignored) p/ o listar-aulas.sh ---
+SENHAS_FILE="$KEYS_DIR/senhas.csv"
+touch "$SENHAS_FILE"
+# remove linha antiga deste grupo (se existir) e regrava
+grep -v "^${SLUG}," "$SENHAS_FILE" > "${SENHAS_FILE}.tmp" 2>/dev/null || true
+mv "${SENHAS_FILE}.tmp" "$SENHAS_FILE"
+echo "${SLUG},${GROUP_NAME},${PASSWORD}" >> "$SENHAS_FILE"
+
 # --- 5. resumo ---
 echo
 echo "============================================"

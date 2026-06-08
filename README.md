@@ -48,6 +48,7 @@ export HETZNER_API_TOKEN=seu_token
 ./provisionar-aula.sh grupo2
 # ...
 
+./listar-aulas.sh                # lista grupos, IPs, status, se o site esta no ar e senhas
 ./apagar-aula.sh grupo1          # apaga depois da aula
 ```
 
