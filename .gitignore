@@ -12,3 +12,6 @@ GABARITO.md
 .DS_Store
 __pycache__/
 *.pyc
+
+# Arquivos temporarios do Word/Office
+~$*
