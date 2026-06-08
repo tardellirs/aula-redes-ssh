@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0-000000?logo=flask&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Dockerfile-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 Atividade prática de **Redes de Computadores** (IFSP Jacareí): os alunos pegam um
 jogo da cobrinha feito em **Flask** e colocam no ar em um **servidor real na nuvem**
@@ -58,3 +59,8 @@ instala **Docker** e libera a **porta 80**.
 
 A pasta `keys/` (chaves SSH privadas) e qualquer `.env` **não** vão para o
 repositório (veja o `.gitignore`).
+
+## Licença
+
+Distribuído sob a licença **MIT** — veja o arquivo [LICENSE](LICENSE). Use, adapte e
+compartilhe à vontade.
