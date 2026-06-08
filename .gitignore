@@ -1,0 +1,11 @@
+# Chaves SSH (NUNCA enviar para o GitHub!)
+keys/
+
+# Segredos / variáveis de ambiente
+.env
+*.pem
+
+# Lixo do sistema / Python
+.DS_Store
+__pycache__/
+*.pyc
