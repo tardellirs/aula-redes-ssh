@@ -1,5 +1,10 @@
 # Aula — SSH, Flask e Contêineres na nuvem
 
+![Shell](https://img.shields.io/badge/Shell-Bash-4EAA25?logo=gnubash&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-3.0-000000?logo=flask&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Dockerfile-2496ED?logo=docker&logoColor=white)
+
 Atividade prática de **Redes de Computadores** (IFSP Jacareí): os alunos pegam um
 jogo da cobrinha feito em **Flask** e colocam no ar em um **servidor real na nuvem**
 (Hetzner), aprendendo no caminho **SSH**, **deploy** e **contêineres (Docker)**.
