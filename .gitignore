@@ -5,6 +5,9 @@ keys/
 .env
 *.pem
 
+# Gabarito (uso interno do professor — não publicar)
+GABARITO.md
+
 # Lixo do sistema / Python
 .DS_Store
 __pycache__/
