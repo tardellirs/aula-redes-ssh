@@ -50,6 +50,9 @@ docker build -t cobrinha .
 Isso baixa o Python, instala o Flask e empacota o projeto. Demora um pouquinho na
 primeira vez.
 
+> 📸 **Entrega 11** — Print do final do `docker build` (as linhas `Successfully built`
+> / `Successfully tagged`).
+
 ## Passo 3 — Rodar o contêiner
 
 ```
@@ -69,6 +72,9 @@ Entendendo cada parte:
 > 💡 O `-p 80:5000` é a parte mais importante: por fora, o mundo acessa pela porta 80
 > (`http://SEU_IP`); por dentro, o Flask continua na 5000. O Docker faz a "ponte".
 
+> 📸 **Entrega 12** — Print do `docker ps` mostrando o contêiner `cobrinha` com
+> status `Up`.
+
 ## Passo 4 — O resultado
 
 1. Acesse `http://SEU_IP` no navegador — a cobrinha está lá.
@@ -81,6 +87,9 @@ Entendendo cada parte:
 
 ✅ **O site continua no ar!** Diferente da Parte 2, agora ele não depende do seu
 terminal: o contêiner permanece em execução no servidor, 24 horas por dia.
+
+> 📸 **Entrega 13** — Print de `http://SEU_IP` **depois** de ter dado `exit` — provando
+> que, com o contêiner, o site continua no ar mesmo sem você conectado.
 
 ---
 
@@ -102,6 +111,9 @@ docker logs -f cobrinha    # acompanha ao vivo (atualize o site e veja!). Ctrl+C
 docker stats               # uso de CPU/memória em tempo real. Ctrl+C para sair
 ```
 
+> 📸 **Entrega 14** — Print do `docker logs cobrinha` (mostrando os acessos ao site)
+> **ou** do `docker stats`.
+
 ### Ligar, desligar, reiniciar
 
 ```
@@ -119,6 +131,9 @@ docker exec -it cobrinha sh
 
 Você entra no contêiner, que possui seu próprio ambiente Linux isolado. Experimente
 `ls`, `pwd`, `cat main.py`. Para sair de dentro do contêiner, digite `exit`.
+
+> 📸 **Entrega 15** — Print de **dentro** do contêiner (depois do
+> `docker exec -it cobrinha sh`), mostrando o resultado de `ls` e `cat main.py`.
 
 ### Remover
 
@@ -138,6 +153,12 @@ docker rm -f cobrinha
 docker build -t cobrinha .
 docker run -d --name cobrinha --restart unless-stopped -p 80:5000 cobrinha
 ```
+
+---
+
+> ✍️ **Entrega 16 (fechamento)** — Explique com suas palavras: qual a diferença entre
+> rodar o site com `python3 main.py` (Parte 2) e com o contêiner Docker (Parte 3)?
+> Por que só o segundo continua no ar depois que você desconecta?
 
 ---
 

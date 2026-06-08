@@ -80,6 +80,9 @@ root@aula-grupo1:~#
 🎉 **Você está dentro do servidor!** Daqui pra frente, tudo o que você digitar
 roda lá na nuvem.
 
+> 📸 **Entrega 1** — Tire um print do terminal logo após conectar, mostrando o
+> `root@aula-grupoX:~#` (prova de que você entrou no servidor).
+
 ---
 
 ## Passo 3 — Exercícios de comandos básicos
@@ -135,6 +138,8 @@ Agora veja o conteúdo do arquivo sem abrir o editor:
 cat ola.txt
 ```
 
+> 📸 **Entrega 2** — Print mostrando o conteúdo do seu arquivo exibido pelo `cat`.
+
 ### Apagando
 
 ```
@@ -154,6 +159,12 @@ df -h         # espaço em disco (-h = "human", em GB/MB)
 free -h       # memória RAM
 nproc         # quantos núcleos de processador o servidor tem
 ```
+
+> 📸 **Entrega 3** — Rode `nproc` e `free -h` e tire um print. ✍️ Responda: quantos
+> **núcleos** de processador e quanta **memória RAM** tem o servidor do seu grupo?
+
+> ✍️ **Entrega 4** — Explique com suas palavras: por que neste servidor o SSH usa a
+> porta **53** e não a porta **22** (a padrão)?
 
 ### Limpar e sair
 
@@ -190,6 +201,9 @@ type $env:USERPROFILE\.ssh\id_ed25519.pub
 
 Aquele texto começando com `ssh-ed25519 ...` é a sua **chave pública** — é ela que
 você colocaria no servidor para entrar sem digitar senha.
+
+> 📸 **Entrega 5** — Print da sua **chave pública** (a saída do comando
+> `type ...id_ed25519.pub`).
 
 > 💬 **Resumo:** chave SSH é o método mais usado em produção (mais seguro que senha).
 > Hoje, para facilitar, vamos usar senha — mas agora você já sabe que a chave existe

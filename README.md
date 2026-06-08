@@ -21,6 +21,10 @@ jogo da cobrinha feito em **Flask** e colocam no ar em um **servidor real na nuv
 3. **[PARTE-3-conteiner.md](PARTE-3-conteiner.md)** — Colocar no ar de verdade com
    Docker, que continua rodando sozinho.
 
+Cada parte tem **checkpoints numerados** (`📸 Entrega N` / `✍️ Entrega N`) — 16 no
+total. Os alunos registram os prints/respostas na **[FOLHA-DE-ENTREGA.docx](FOLHA-DE-ENTREGA.docx)**
+e entregam ao final.
+
 O guia do professor (preparação, tempos, custos, gabarito e solução de problemas)
 está em **[PLANO-DA-AULA.md](PLANO-DA-AULA.md)**.
 

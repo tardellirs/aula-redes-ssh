@@ -52,6 +52,8 @@ Você deve ver `main.py`, `templates`, `Dockerfile`, etc.
 > 💡 `git clone` baixa uma cópia do repositório. É o jeito mais comum de levar código
 > para um servidor: em vez de copiar arquivo por arquivo, você "puxa" do GitHub.
 
+> 📸 **Entrega 6** — Print do `ls` mostrando os arquivos do projeto após o `git clone`.
+
 ## Passo 3 — Instalar o Flask
 
 ```
@@ -100,6 +102,10 @@ Deve aparecer a cobrinha com os nomes do grupo! 🐍
 > estar bloqueando a porta 5000 (assim como bloqueia a 22 do SSH). **Pule para o
 > Passo 6**, que usa a porta 80 — essa funciona.
 
+> 📸 **Entrega 7** — Print de `http://SEU_IP:5000` com a cobrinha e os nomes do grupo
+> (repare no `:5000` na URL). Se a porta 5000 estiver bloqueada, escreva
+> *"porta 5000 bloqueada"* nesta entrega e siga para o Passo 6.
+
 Para parar o servidor, volte ao terminal e aperte `Ctrl + C`.
 
 ## Passo 6 — Rodar na porta 80 (a porta padrão da web)
@@ -118,6 +124,12 @@ http://SEU_IP
 > da web** — todo navegador tenta a 80 automaticamente. Por isso sites como
 > `google.com` não mostram número de porta na barra de endereço.
 
+> 📸 **Entrega 8** — Print de `http://SEU_IP` (porta 80) com os nomes do grupo. ✍️
+> Repare que a URL **não tem `:porta`** — explique por que não precisamos mais digitá-la.
+
+> ✍️ **Entrega 9** — Ainda na porta 80, acesse `http://SEU_IP/pagina99` (uma página
+> que não existe). 📸 Print do erro e responda: **que erro apareceu e por quê?**
+
 ## Passo 7 — O problema! 🔌
 
 Com o site rodando na porta 80, faça o teste:
@@ -133,6 +145,9 @@ Porque o `python3 main.py` só roda **enquanto o seu terminal está aberto e
 conectado**. Quando você fecha o SSH, o programa morre junto. Ou seja: do jeito que
 fizemos, o site só fica no ar se você ficar com o computador ligado e conectado o
 tempo todo — o que não serve para um site de verdade.
+
+> 📸 **Entrega 10** — Print do navegador mostrando o site **fora do ar** (erro de
+> conexão) depois do `Ctrl + C` + `exit`. ✍️ Por que ele caiu?
 
 > 👉 Na **Parte 3** vamos resolver isso com **contêineres**: o site vai continuar no
 > ar sozinho, mesmo depois que você desconectar e até se o servidor reiniciar.

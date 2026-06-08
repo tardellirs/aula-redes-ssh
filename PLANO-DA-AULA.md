@@ -95,6 +95,13 @@ Toda a aula está publicada no seu GitHub e os alunos clonam direto no servidor 
 Se quiser mudar o conteúdo (ex: corrigir algo), edite os arquivos deste diretório e
 dê `git push` — ele já está conectado ao repositório.
 
+### 2b. Entregas (prints/respostas)
+
+Os três handouts têm **16 checkpoints numerados** (📸 print ou ✍️ resposta) —
+`Entrega 1` a `Entrega 16`. Entregue a cada grupo o arquivo **`FOLHA-DE-ENTREGA.docx`**:
+eles colam o print / escrevem a resposta de cada entrega, na ordem, e enviam ao final.
+Serve como ritmo da aula, prova de execução e rubrica de correção.
+
 ### 3. ⚠️ Confirmar as portas na rede do IFSP
 
 Sabemos que o IFSP **bloqueia a porta 22** e **libera a 53** (por isso o SSH usa 53).
@@ -169,9 +176,11 @@ aula-redes-ssh/              # repositório da aula (github.com/tardellirs/aula-
 ├── provisionar-grupo.sh      # cria 1 servidor por grupo (CX23, porta 53, senha, Docker)
 ├── listar-grupos.sh          # lista grupos, IPs, status, site no ar e senhas
 ├── apagar-grupo.sh           # apaga o servidor de um grupo
-├── PARTE-1-ssh.md           # handout do aluno
-├── PARTE-2-flask.md         # handout do aluno
-├── PARTE-3-conteiner.md     # handout do aluno
+├── PARTE-1-ssh.md           # handout do aluno (com Entregas 1–5)
+├── PARTE-2-flask.md         # handout do aluno (com Entregas 6–10)
+├── PARTE-3-conteiner.md     # handout do aluno (com Entregas 11–16)
+├── FOLHA-DE-ENTREGA.md      # fonte da folha de entrega
+├── FOLHA-DE-ENTREGA.docx    # folha p/ o grupo colar prints/respostas e enviar
 ├── PLANO-DA-AULA.md         # este guia
 └── keys/                    # chaves SSH do professor (NÃO vai pro GitHub — .gitignore)
 ```
