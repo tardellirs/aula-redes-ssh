@@ -123,7 +123,8 @@ http://SEU_IP
 Com o site rodando na porta 80, faça o teste:
 
 1. Confirme que `http://SEU_IP` está funcionando no navegador.
-2. Agora **feche a janela do PowerShell** (ou aperte `Ctrl + C` e depois `exit`).
+2. Volte ao terminal e aperte **`Ctrl + C`** (para parar o programa) e depois digite
+   **`exit`** (para encerrar a conexão SSH com o servidor).
 3. Volte ao navegador e **atualize** a página `http://SEU_IP`.
 
 ❌ **O site caiu!** Por quê?
