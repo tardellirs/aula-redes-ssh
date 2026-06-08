@@ -127,7 +127,7 @@ Isso remove a instância, a chave SSH na Hetzner e a chave local.
 **Parte 3 — Contêiner**
 - O "aha": fecharam o SSH e o site **continuou no ar**.
 - `-p 80:5000` é o conceito de **mapeamento de portas** (fora 80 ↔ dentro 5000).
-- `docker exec -it cobrinha sh` impressiona: "tem um mini-Linux dentro da caixinha".
+- `docker exec -it cobrinha sh` impressiona: o contêiner tem seu próprio ambiente Linux isolado.
 
 ---
 
