@@ -5,18 +5,24 @@ com **contêineres**.
 
 ## O que é um contêiner?
 
-Um **contêiner** é como uma "caixinha" que empacota o seu programa **junto com tudo
-que ele precisa para rodar** (o Python, o Flask, os arquivos...). Essa caixinha:
+Um **contêiner** é um ambiente isolado que empacota a aplicação **junto com todas as
+suas dependências** (o interpretador Python, bibliotecas como o Flask, os arquivos do
+projeto e as configurações). Com isso, o contêiner:
 
-- roda **sozinha, em segundo plano** (não precisa do seu terminal aberto);
-- **continua no ar** mesmo depois que você desconecta;
-- pode ser configurada para **voltar sozinha** se o servidor reiniciar.
+- executa de forma **isolada e em segundo plano** (não depende do seu terminal aberto);
+- **continua em execução** mesmo depois que você encerra a conexão SSH;
+- pode ser configurado para **reiniciar automaticamente** caso o servidor reinicie;
+- garante **portabilidade**: como o contêiner carrega tudo o que precisa, se a
+  aplicação roda na sua máquina ela roda **igual em qualquer outro ambiente** — outro
+  computador ou um servidor Linux na nuvem. É o que resolve o clássico problema do
+  *"na minha máquina funciona"*.
 
-O **Docker** é o programa que cria e gerencia esses contêineres (já está instalado
+O **Docker** é a ferramenta que cria e gerencia esses contêineres (já está instalado
 no servidor).
 
-> 📦 No projeto há um arquivo chamado `Dockerfile`: é a "receita" que diz ao Docker
-> como montar a caixinha (qual base usar, o que instalar, qual comando executar).
+> 📦 No projeto há um arquivo chamado `Dockerfile`: é a **definição da imagem** — ele
+> descreve, passo a passo, como o contêiner é construído (qual imagem base usar, o que
+> instalar e qual comando executar).
 
 ---
 
@@ -32,7 +38,7 @@ cd aula-redes-ssh/app
 > pkill -f main.py
 > ```
 
-## Passo 2 — Construir a imagem (montar a caixinha)
+## Passo 2 — Construir a imagem
 
 ```
 docker build -t cobrinha .
@@ -57,13 +63,13 @@ Entendendo cada parte:
 | `-d` | roda em segundo plano (*detached*) — libera seu terminal |
 | `--name cobrinha` | dá um nome ao contêiner (pra gente se referir a ele depois) |
 | `--restart unless-stopped` | se cair ou o servidor reiniciar, ele **volta sozinho** |
-| `-p 80:5000` | liga a porta **80 do servidor** à porta **5000 de dentro da caixinha** |
+| `-p 80:5000` | liga a porta **80 do servidor** à porta **5000 dentro do contêiner** |
 | `cobrinha` | qual imagem rodar (a que criamos no passo 2) |
 
 > 💡 O `-p 80:5000` é a parte mais importante: por fora, o mundo acessa pela porta 80
 > (`http://SEU_IP`); por dentro, o Flask continua na 5000. O Docker faz a "ponte".
 
-## Passo 4 — A mágica! ✨
+## Passo 4 — O resultado
 
 1. Acesse `http://SEU_IP` no navegador — a cobrinha está lá.
 2. Agora **saia do servidor**:
@@ -74,7 +80,7 @@ Entendendo cada parte:
 4. Atualize `http://SEU_IP` no navegador.
 
 ✅ **O site continua no ar!** Diferente da Parte 2, agora ele não depende do seu
-terminal. A caixinha roda sozinha no servidor, 24 horas por dia.
+terminal: o contêiner permanece em execução no servidor, 24 horas por dia.
 
 ---
 
@@ -85,7 +91,7 @@ Conecte de novo (`ssh -p 53 root@SEU_IP`) e experimente cada comando:
 ```
 docker ps                  # lista os contêineres RODANDO
 docker ps -a               # lista TODOS (inclusive os parados)
-docker images              # lista as imagens (as "caixinhas montadas")
+docker images              # lista as imagens (os modelos usados para criar contêineres)
 ```
 
 ### Ver o que está acontecendo dentro
@@ -111,8 +117,8 @@ docker restart cobrinha    # reinicia
 docker exec -it cobrinha sh
 ```
 
-Você entra na "caixinha" (um mini-Linux só dela!). Experimente `ls`, `pwd`,
-`cat main.py`. Para sair de dentro do contêiner, digite `exit`.
+Você entra no contêiner, que possui seu próprio ambiente Linux isolado. Experimente
+`ls`, `pwd`, `cat main.py`. Para sair de dentro do contêiner, digite `exit`.
 
 ### Remover
 
