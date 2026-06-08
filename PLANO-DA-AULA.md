@@ -51,10 +51,10 @@ A env da Hetzner está em `/Users/tardelli/Workplace/hackathon-servers/.env`
 (o script lê de lá automaticamente). Para cada grupo:
 
 ```bash
-cd /Users/tardelli/Workplace/Classes/redes-flask-hetzner
-./provisionar-aula.sh grupo1
-./provisionar-aula.sh grupo2
-./provisionar-aula.sh grupo3
+cd /Users/tardelli/Workplace/Classes/aula-redes-ssh
+./provisionar-grupo.sh grupo1
+./provisionar-grupo.sh grupo2
+./provisionar-grupo.sh grupo3
 # ... um por grupo
 ```
 
@@ -71,12 +71,12 @@ A qualquer momento, veja **todos os servidores de uma vez** (grupo, IP, tipo, st
 se o site está no ar e a senha):
 
 ```bash
-./listar-aulas.sh
+./listar-grupos.sh
 ```
 
 > **Os nomes dos grupos são definidos por você** ao provisionar (ex: `grupo1`,
 > `grupo2`, ...). Os times escolhem o nome real deles, mas no servidor padronizamos
-> como `grupoN` para a senha ficar simples. O `listar-aulas.sh` mostra o que existe.
+> como `grupoN` para a senha ficar simples. O `listar-grupos.sh` mostra o que existe.
 
 ### 2. Distribuir para cada grupo
 
@@ -114,8 +114,8 @@ O mesmo firewall pode bloquear a **porta 5000**.
 - **Apague os servidores depois da aula:**
 
 ```bash
-./apagar-aula.sh grupo1
-./apagar-aula.sh grupo2
+./apagar-grupo.sh grupo1
+./apagar-grupo.sh grupo2
 # ...
 ```
 
@@ -153,7 +153,7 @@ Isso remove a instância, a chave SSH na Hetzner e a chave local.
 | `pip install flask` dá erro (`externally-managed`) | No servidor usamos `apt install -y python3-flask` (já está no handout). |
 | `docker run` diz que a **porta 80 está em uso** | Sobrou o Flask da Parte 2 rodando. Rode `pkill -f main.py` e tente de novo. |
 | Aluno fechou o terminal e "perdeu tudo" | Os arquivos continuam no servidor. É só reconectar com `ssh -p 53 root@IP`. |
-| Esqueceu a senha do grupo | É o nome do grupo (ex: `grupo1`). Ou veja na saída do `provisionar-aula.sh`. |
+| Esqueceu a senha do grupo | É o nome do grupo (ex: `grupo1`). Ou veja na saída do `provisionar-grupo.sh`. |
 
 ---
 
@@ -166,9 +166,9 @@ aula-redes-ssh/              # repositório da aula (github.com/tardellirs/aula-
 │   ├── templates/index.html # jogo da cobrinha
 │   ├── Dockerfile           # receita do contêiner (Parte 3)
 │   └── requirements.txt
-├── provisionar-aula.sh      # cria 1 servidor por grupo (CX23, porta 53, senha, Docker)
-├── listar-aulas.sh          # lista grupos, IPs, status, site no ar e senhas
-├── apagar-aula.sh           # apaga o servidor de um grupo
+├── provisionar-grupo.sh      # cria 1 servidor por grupo (CX23, porta 53, senha, Docker)
+├── listar-grupos.sh          # lista grupos, IPs, status, site no ar e senhas
+├── apagar-grupo.sh           # apaga o servidor de um grupo
 ├── PARTE-1-ssh.md           # handout do aluno
 ├── PARTE-2-flask.md         # handout do aluno
 ├── PARTE-3-conteiner.md     # handout do aluno

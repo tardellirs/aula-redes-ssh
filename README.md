@@ -44,12 +44,12 @@ Cada grupo recebe um servidor Hetzner. Configure o token e provisione:
 # token da Hetzner: no ambiente, ou em um .env apontado por HETZNER_ENV_FILE
 export HETZNER_API_TOKEN=seu_token
 
-./provisionar-aula.sh grupo1     # cria aula-grupo1, senha "grupo1"
-./provisionar-aula.sh grupo2
+./provisionar-grupo.sh grupo1     # cria aula-grupo1, senha "grupo1"
+./provisionar-grupo.sh grupo2
 # ...
 
-./listar-aulas.sh                # lista grupos, IPs, status, se o site esta no ar e senhas
-./apagar-aula.sh grupo1          # apaga depois da aula
+./listar-grupos.sh                # lista grupos, IPs, status, se o site esta no ar e senhas
+./apagar-grupo.sh grupo1          # apaga depois da aula
 ```
 
 O script cria a instância (CX23 → CX33 → CPX22), habilita **SSH na porta 53**

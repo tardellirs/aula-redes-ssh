@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 #
-# apagar-aula.sh — apaga a instancia Hetzner de um grupo (servidor + chave SSH).
+# apagar-grupo.sh — apaga a instancia Hetzner de um grupo (servidor + chave SSH).
 #
 # Uso:
-#   ./apagar-aula.sh <nome-do-grupo>
+#   ./apagar-grupo.sh <nome-do-grupo>
 #
 # Exemplo:
-#   ./apagar-aula.sh grupo-cobrinha
+#   ./apagar-grupo.sh grupo-cobrinha
 
 ENV_FILE="${HETZNER_ENV_FILE:-/Users/tardelli/Workplace/hackathon-servers/.env}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

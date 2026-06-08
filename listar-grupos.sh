@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 #
-# listar-aulas.sh — lista todos os servidores de aula (aula-*) com grupo, IP,
+# listar-grupos.sh — lista todos os servidores de aula (aula-*) com grupo, IP,
 # tipo, status, se o site esta no ar e a senha de cada grupo.
 #
 # Uso:
-#   ./listar-aulas.sh
+#   ./listar-grupos.sh
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ENV_FILE="${HETZNER_ENV_FILE:-/Users/tardelli/Workplace/hackathon-servers/.env}"

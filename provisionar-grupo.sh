@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 #
-# provisionar-aula.sh — cria UMA instancia Hetzner para um grupo da aula.
+# provisionar-grupo.sh — cria UMA instancia Hetzner para um grupo da aula.
 #
 # O que faz:
 #   1. Cria um servidor na Hetzner (tenta CX23 -> CX33 -> CPX22, o mais barato disponivel)
@@ -12,17 +12,17 @@ set -euo pipefail
 #   6. Mostra o comando de acesso (por senha) para o grupo
 #
 # Uso:
-#   ./provisionar-aula.sh <nome-do-grupo> [senha]
+#   ./provisionar-grupo.sh <nome-do-grupo> [senha]
 #
 # A senha e opcional: se nao informar, usa o proprio nome do grupo como senha.
 # Padronize os grupos como grupo1, grupo2, ... (a senha vira grupo1, grupo2, ...).
 #
 # Exemplos:
-#   ./provisionar-aula.sh grupo1            # servidor aula-grupo1, senha "grupo1"
-#   ./provisionar-aula.sh grupo2            # servidor aula-grupo2, senha "grupo2"
-#   ./provisionar-aula.sh cobrinhas senha42 # senha personalizada
+#   ./provisionar-grupo.sh grupo1            # servidor aula-grupo1, senha "grupo1"
+#   ./provisionar-grupo.sh grupo2            # servidor aula-grupo2, senha "grupo2"
+#   ./provisionar-grupo.sh cobrinhas senha42 # senha personalizada
 #
-# Para apagar depois: ./apagar-aula.sh <nome-do-grupo>
+# Para apagar depois: ./apagar-grupo.sh <nome-do-grupo>
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 # Caminho do .env com o HETZNER_API_TOKEN. Pode ser sobrescrito com a variavel
@@ -196,7 +196,7 @@ systemctl restart ssh
 echo "  -> Login por senha habilitado para root"
 SETUP_PWD
 
-# --- 4c. registra a senha localmente (keys/ e gitignored) p/ o listar-aulas.sh ---
+# --- 4c. registra a senha localmente (keys/ e gitignored) p/ o listar-grupos.sh ---
 SENHAS_FILE="$KEYS_DIR/senhas.csv"
 touch "$SENHAS_FILE"
 # remove linha antiga deste grupo (se existir) e regrava
