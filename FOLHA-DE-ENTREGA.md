@@ -13,7 +13,7 @@ title: "Folha de Entrega — Aula: SSH, Flask e Contêineres"
 ---
 
 **Como entregar:** ao longo da aula, cada handout pede uma **Entrega numerada**
-(📸 print ou ✍️ resposta). Cole aqui o print ou escreva a resposta de cada uma,
+(print ou resposta). Cole aqui o print ou escreva a resposta de cada uma,
 na ordem. Numere conforme o handout.
 
 ---
