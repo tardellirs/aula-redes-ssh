@@ -200,6 +200,9 @@ systemctl restart ssh
 echo "  -> Login por senha habilitado"
 SETUP_PWD
 
+# da um tempo pro sshd voltar do restart (evita a 1a tentativa de login falhar)
+sleep 4
+
 # --- registra no senhas.csv: slug,grupo,senha,provedor (keys/ e gitignored) ---
 SENHAS_FILE="$KEYS_DIR/senhas.csv"
 touch "$SENHAS_FILE"
