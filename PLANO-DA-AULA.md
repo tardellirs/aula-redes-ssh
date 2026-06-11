@@ -163,6 +163,7 @@ Isso remove a instância, a chave SSH na Hetzner e a chave local.
 | `docker run` diz que a **porta 80 está em uso** | Sobrou o Flask da Parte 2 rodando. Rode `pkill -f main.py` e tente de novo. |
 | Aluno fechou o terminal e "perdeu tudo" | Os arquivos continuam no servidor. É só reconectar com `ssh -p 53 root@IP`. |
 | Esqueceu a senha do grupo | É o nome do grupo (ex: `grupo1`). Ou veja na saída do `provisionar-grupo.sh`. |
+| `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` | O IP foi reusado de um servidor antigo. No PC: `ssh-keygen -R <IP>` e reconecte (digite `yes`). Acontece em PCs que já conectaram naquele IP — alunos em PC "novo" não veem isso. |
 
 ---
 

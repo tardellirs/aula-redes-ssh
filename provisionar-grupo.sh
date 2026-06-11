@@ -150,7 +150,9 @@ fi
 
 # --- 3. espera o SSH (porta 22, root) ---
 echo "[3/4] Aguardando SSH..."
+# limpa chaves antigas desse IP no known_hosts (IPs sao reciclados entre provisionamentos)
 ssh-keygen -R "$SERVER_IP" 2>/dev/null || true
+ssh-keygen -R "[$SERVER_IP]:53" 2>/dev/null || true
 SSH_OPTS="-i $KEY -o StrictHostKeyChecking=accept-new -o ConnectTimeout=5"
 for i in $(seq 1 60); do
   ssh $SSH_OPTS "root@${SERVER_IP}" "echo ok" &>/dev/null && { echo "  -> SSH disponivel"; break; }
