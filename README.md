@@ -42,23 +42,29 @@ cd aula-redes-ssh/app
 
 ## Provisionamento dos servidores (professor)
 
-Cada grupo recebe um servidor Hetzner. Configure o token e provisione:
+Cada grupo recebe um servidor. **Hetzner por padrão**; se a conta Hetzner já estiver
+no limite (10 servidores), cai automaticamente para o **DigitalOcean**. Configure os
+tokens e provisione:
 
 ```bash
-# token da Hetzner: no ambiente, ou em um .env apontado por HETZNER_ENV_FILE
+# tokens no ambiente, ou em um .env apontado por HETZNER_ENV_FILE
 export HETZNER_API_TOKEN=seu_token
+export DIGITALOCEAN_API_TOKEN=seu_token   # usado só no fallback
 
 ./provisionar-grupo.sh grupo1     # cria aula-grupo1, senha "grupo1"
 ./provisionar-grupo.sh grupo2
 # ...
 
-./listar-grupos.sh                # lista grupos, IPs, status, se o site esta no ar e senhas
-./apagar-grupo.sh grupo1          # apaga depois da aula
+./listar-grupos.sh                # lista grupos (Hetzner + DO), IPs, status, site e senhas
+./apagar-grupo.sh grupo1          # apaga (procura nos dois provedores)
 ```
 
-O script cria a instância (CX23 → CX33 → CPX22), habilita **SSH na porta 53**
-(a 22 costuma ser bloqueada em redes institucionais), define **login por senha**,
-instala **Docker** e libera a **porta 80**.
+O script cria a instância (Hetzner CX23 → CX33 → CPX22, ou DO `s-2vcpu-2gb`), habilita
+**SSH na porta 53** (a 22 costuma ser bloqueada em redes institucionais), define
+**login por senha**, instala **Docker** e libera a **porta 80**.
+
+> O limite Hetzner pode ser ajustado com `HETZNER_LIMIT=N ./provisionar-grupo.sh ...`
+> (útil para testar o fallback). A conta DigitalOcean tem limite próprio de droplets.
 
 ## Aviso
 

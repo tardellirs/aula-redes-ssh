@@ -59,7 +59,9 @@ cd /Users/tardelli/Workplace/Classes/aula-redes-ssh
 ```
 
 Cada execução:
-- cria a instância (tenta **CX23 → CX33 → CPX22**, a mais barata disponível);
+- escolhe o provedor: **Hetzner** por padrão; se a conta Hetzner estiver no limite
+  (10), cai pro **DigitalOcean** (`s-2vcpu-2gb`) automaticamente;
+- cria a instância (Hetzner: tenta **CX23 → CX33 → CPX22**, a mais barata disponível);
 - habilita SSH na **porta 53** e **login por senha** (senha = nome do grupo, ex: `grupo1`);
 - instala Docker e pip;
 - libera a porta 80.
