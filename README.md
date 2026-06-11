@@ -8,7 +8,7 @@
 
 Atividade prática de **Redes de Computadores** (IFSP Jacareí): os alunos pegam um
 jogo da cobrinha feito em **Flask** e colocam no ar em um **servidor real na nuvem**
-(Hetzner), aprendendo no caminho **SSH**, **deploy** e **contêineres (Docker)**.
+(Hetzner/DigitalOcean), aprendendo no caminho **SSH**, **deploy** e **contêineres (Docker)**.
 
 > Material livre para reuso por outros professores. Sinta-se à vontade para adaptar.
 
@@ -28,7 +28,7 @@ e entregam ao final.
 O guia do professor (preparação, tempos, custos, gabarito e solução de problemas)
 está em **[PLANO-DA-AULA.md](PLANO-DA-AULA.md)**.
 
-## A cobrinha
+## Website jogo da cobrinha
 
 O sistema que vai ao ar está na pasta [`app/`](app/): um Flask que serve o jogo da
 cobrinha e mostra os nomes do grupo (lista `integrantes` em `main.py`).
