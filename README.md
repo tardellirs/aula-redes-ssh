@@ -4,6 +4,8 @@
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0-000000?logo=flask&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Dockerfile-2496ED?logo=docker&logoColor=white)
+![Hetzner](https://img.shields.io/badge/Hetzner-Cloud-D50C2D?logo=hetzner&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-Cloud-0080FF?logo=digitalocean&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 Atividade prática de **Redes de Computadores** (IFSP Jacareí): os alunos pegam um
